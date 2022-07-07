@@ -1,0 +1,32 @@
+<html>
+<head>
+</head>
+
+<body>
+	<h1> hello world </h1>
+	
+	<script>
+	   const url = "http://127.0.0.1:8000/api/client/all";
+	   async function getapi(url) {
+		    // Storing response
+		    const response = await fetch(url);
+		    
+		    // Storing data in form of JSON
+		    var data = await response.json();
+		    console.log(data);
+		    if (response) {
+			hideloader();
+		    }
+	   
+	    show(data);
+	   }
+	   // Calling that async function
+	   getapi(url);
+	   function show(data){
+	   	for (let d of data.list){
+	   		console.log(data);	
+	   	}
+	   }	
+	</script>
+</body>
+</html>
