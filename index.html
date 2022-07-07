@@ -4,6 +4,8 @@
 
 <body>
 	<h1> hello world </h1>
+	<div id="client">
+	</div>
 	
 	<script>
 	   const url = "http://127.0.0.1:8000/api/client/all";
@@ -36,6 +38,7 @@
 			    <td>${d.phone_number}</td>         
 			</tr>`;	
 	   	}
+		  document.getElementById("client").innerHTML = tab;
 	   }	
 	</script>
 </body>
