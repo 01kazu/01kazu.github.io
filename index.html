@@ -8,7 +8,51 @@
 	</div>
 	
 	<script>
-	   const url = "http://127.0.0.1:8000/api/client/all";
+	   const url = "<html>
+<head>
+</head>
+
+<body>
+	<h1> hello world </h1>
+	<div id="client">
+	</div>
+	
+	<script>
+	   const url = "http://127.0.0.1:8000/crm/client-wallet/api/all";
+	   async function getapi(url) {
+		    // Storing response
+		    const response = await fetch(url);
+		    
+		    // Storing data in form of JSON
+		    var data = await response.json();
+		    console.log(data);
+		    if (response) {
+			hideloader();
+		    }
+	   
+	    show(data);
+	   }
+	   // Calling that async function
+	   getapi(url);
+	   function show(data){
+		let tab = 
+	   		`<tr>
+			  <th>First Name </th>
+			  <th>E mail</th>
+			  <th>Phone number</th>
+			 </tr>`; 
+	   	for (let d of data.list){
+	   		tab += `<tr> 
+			    <td>${d.first_name} </td>
+			    <td>${d.email}</td>
+			    <td>${d.phone_number}</td>         
+			</tr>`;	
+	   	}
+		  document.getElementById("client").innerHTML = tab;
+	   }	
+	</script>
+</body>
+</html>";
 	   async function getapi(url) {
 		    // Storing response
 		    const response = await fetch(url);
