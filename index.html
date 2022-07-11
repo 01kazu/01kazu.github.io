@@ -15,12 +15,8 @@
 		    
 		    // Storing data in form of JSON
 		    var data = await response.json();
-		    console.log(data);
-		    if (response) {
-			hideloader();
-		    }
-	   
-	    show(data);
+		    console.log(data);   
+	    	    show(data);
 	   }
 	   // Calling that async function
 	   getapi(url);
